@@ -1,13 +1,40 @@
-const btnQuery = document.querySelector("form.komanda.komanda");
+const nBtn1Query = document.querySelector('button');
+const nBtn2Query = document.querySelector('button');
+const nBtn3Query = document.querySelector('button');
+const sBtn1Query = document.querySelector('button');
+const sBtn2Query = document.querySelector('button');
+const sBtn3Query = document.querySelector('button');
+const nRezQuery = document.querySelector('.rezultatas');
+const sRezQuery = document.querySelector('.rezultatas');
 
-function btnClick() {
-    console.log(btnQuery.dataset.komanda);
-    console.log(btnQuery.dataset.komanda);
+const elList = Array.from(document.querySelectorAll('.komanda'), (el) => {
+    return {
+        element: el,
+        select: el.dataset
+    };
+}); console.log(elList);
 
-    switch (btnQuery.dataset.points) {
-        case "1": document.querySelector('div').innerText = '1'; break;
-        case "2": document.querySelector('div').innerText = '22'; break;
-        case "3": document.querySelector('div').innerText = '333'; break;
-    }
+function n1Click() {
+    nBtn1Query.innerText = '5';
 }
-btnQuery.addEventListener('click', btnClick);
+
+function n2Click() {
+    nBtn2Query.innerText = '6';
+}
+/*
+if (document.querySelector('button').dataset.komanda === 'namu') {
+    //nBtn1Query.addEventListener.prototype.n1Click;
+}
+else //if (document.querySelector('button').dataset.komanda === 'sveciu')
+}
+*/
+nBtn1Query.addEventListener('click', n1Click);
+nBtn2Query.addEventListener('click', n2Click);
+/*
+nBtn3Query.addEventListener('click', n3Click);
+sBtn1Query.addEventListener('click', s1Click);
+sBtn2Query.addEventListener('click', s2Click);
+sBtn3Query.addEventListener('click', s3Click);
+nRezQuery.addEventListener('click', nRezCLick);
+sRezQuery.addEventListener('click', sRezCLick);
+*/
