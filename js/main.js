@@ -1,4 +1,5 @@
-const nBtn1Query = document.querySelector('button');
+const nBtn1Query = document.querySelectorAll('.rezultatas, [data-komanda]');
+/*
 const nBtn2Query = document.querySelector('button');
 const nBtn3Query = document.querySelector('button');
 const sBtn1Query = document.querySelector('button');
@@ -6,34 +7,44 @@ const sBtn2Query = document.querySelector('button');
 const sBtn3Query = document.querySelector('button');
 const nRezQuery = document.querySelector('.rezultatas');
 const sRezQuery = document.querySelector('.rezultatas');
-let rez = 0;
+*/
+let number = 0;
+let pointI = 0;
+let komandaI = '';
+let i = 0;
 
-const article = document.querySelectorAll('button'),
-        data = article.dataset;
-let number = parseInt(article[0].textContent);
-console.log(number += parseInt(article[0].dataset.points)); //taskai mygtukuose: '1', '2', '3'
+//for (let i = 0; i < nBtn1Query.length; i++) {
+function doit () {     
+        alert("Button Clicked");
+       pointI = nBtn1Query[0].dataset.points;
+       komandaI = nBtn1Query[1].dataset.komanda;
+    };
+    if (komandaI === 'namu')
+        lenta[0].textContent += pointI;
+    else if (komandaI === 'sveciu')
+        lenta[1].textContent += pointI;
+
+    //console.log(parseInt(number)); //taskai mygtukuose: '1', '2', '3'
+    const lenta = document.querySelectorAll('.lenta > div');
+    console.log(lenta[0].textContent); // VEIKIA
+    console.log(lenta[1].textContent); //rezultatas lentoje vietoj "0:0" => [0]namu[1]sveciu
 
 const article2 = document.querySelectorAll('.lenta > div'),
-        data2 = article2.dataset;
-console.log(article2[0].textContent); //rezultatas lentoje vietoj "0:0" => [0]namu[1]sveciu
-
+    data2 = article2.dataset;
+//console.log(article2[0].textContent); //rezultatas lentoje vietoj "0:0" => [0]namu[1]sveciu
+/* DELETE
 const article3 = document.querySelectorAll('.aikstele > .komanda'),
-        data3 = article3.dataset;
+    data3 = article3.dataset;
 console.log(article3[0].textContent); //komandos: [0]namu vs [0]sveciu
-
-
+*/
 
 const elList = Array.from(document.querySelectorAll('.komanda'), (el) => {
     return {
         element: el,
         select: el.dataset
     };
-}); console.log(elList);
-
-function n1Click() {
-    nBtn1Query.innerText = '4';
-}
-
+}); //console.log(elList);
+/*
 function n2Click() {
     nBtn2Query.innerText = '5';
 }
@@ -45,9 +56,9 @@ if (document.querySelector('button').dataset.komanda === 'namu') {
 else //if (document.querySelector('button').dataset.komanda === 'sveciu')
 }
 */
-nBtn1Query.addEventListener('click', n1Click);
-nBtn2Query.addEventListener('click', n2Click);
+nBtn1Query[0].addEventListener('click', doit);
 /*
+nBtn2Query.addEventListener('click', n2Click);
 nBtn3Query.addEventListener('click', n3Click);
 sBtn1Query.addEventListener('click', s1Click);
 sBtn2Query.addEventListener('click', s2Click);
