@@ -1,4 +1,28 @@
-const nBtn1Query = document.querySelectorAll('.rezultatas, [data-komanda]');
+const nBtn1Query = document.querySelectorAll('button');//[data-komanda="namu"], [data-points="1"]');
+const lenta = document.querySelectorAll('.lenta > div');
+//const nBtn1Query = document.querySelectorAll('button');
+
+for (let i of nBtn1Query) {
+    i.addEventListener('click', function () {
+        console.log(i.dataset.points);
+        console.log('"data-komanda" kintamieji yra: ' + nBtn1Query.length);
+        if (i.dataset.komanda === 'namu')
+            console.log("NAMU komanda" + i.dataset.komanda);
+        else if (i.dataset.komanda === 'sveciu')
+            console.log("SVECIU komanda" + i.dataset.komanda);
+
+    //const newButton = nBtn1Query[i]; /*nBtn1Query.length - 1*/
+    //newButton.addEventListener("click", function() {
+
+
+        if (i.dataset.komanda === 'namu')
+            lenta[0].textContent = parseInt(lenta[0].textContent) + parseInt(i.dataset.points);
+        else if (i.dataset.komanda === 'sveciu')
+            lenta[1].textContent = parseInt(lenta[1].textContent) + parseInt(i.dataset.points);
+        console.log(i.dataset.komanda + ' ' + lenta[0].textContent + ' : ' + lenta[1].textContent);
+    });
+}
+
 /*
 const nBtn2Query = document.querySelector('button');
 const nBtn3Query = document.querySelector('button');
@@ -14,20 +38,14 @@ let komandaI = '';
 let i = 0;
 
 //for (let i = 0; i < nBtn1Query.length; i++) {
-function doit () {     
-        alert("Button Clicked");
-       pointI = nBtn1Query[0].dataset.points;
-       komandaI = nBtn1Query[1].dataset.komanda;
-    };
-    if (komandaI === 'namu')
-        lenta[0].textContent += pointI;
-    else if (komandaI === 'sveciu')
-        lenta[1].textContent += pointI;
+function doit() {
+    alert("Button Clicked");
+    pointI = nBtn1Query[0].dataset.points;
+    komandaI = nBtn1Query[1].dataset.komanda;
+};
 
-    //console.log(parseInt(number)); //taskai mygtukuose: '1', '2', '3'
-    const lenta = document.querySelectorAll('.lenta > div');
-    console.log(lenta[0].textContent); // VEIKIA
-    console.log(lenta[1].textContent); //rezultatas lentoje vietoj "0:0" => [0]namu[1]sveciu
+//console.log(lenta[0].textContent); // VEIKIA
+//console.log(lenta[1].textContent); //rezultatas lentoje vietoj "0:0" => [0]namu[1]sveciu
 
 const article2 = document.querySelectorAll('.lenta > div'),
     data2 = article2.dataset;
@@ -56,7 +74,7 @@ if (document.querySelector('button').dataset.komanda === 'namu') {
 else //if (document.querySelector('button').dataset.komanda === 'sveciu')
 }
 */
-nBtn1Query[0].addEventListener('click', doit);
+//nBtn1Query.addEventListener('click', doit);
 /*
 nBtn2Query.addEventListener('click', n2Click);
 nBtn3Query.addEventListener('click', n3Click);
