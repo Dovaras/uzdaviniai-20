@@ -1,0 +1,21 @@
+header {
+    display: block;
+    justify-content: space-between;
+    /* align-items: center; */
+    font-size: 20px;
+  }
+  .big {
+    font-size: 40px;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav.visible {
+    display: flex;
+  }
+  .hamburger {
+    font-size: 40px;
+    cursor: pointer;
+  }
