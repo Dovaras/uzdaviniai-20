@@ -27,7 +27,7 @@ function buttonClick() {
     const sultys = document.getElementById("sultys");
     const gira = document.getElementById("gira");
     const pienas = document.getElementById("pienas");
-
+/**/
     if (sultys.checked == true) {
         uzsakymas += "sultys yra pasirinktas gerimas.";
     } else if (gira.checked == true) {
@@ -35,7 +35,7 @@ function buttonClick() {
         } else if (pienas.checked == true) {
             uzsakymas += "pienas yra pasirinktas gerimas.";
             } else uzsakymas += "nera pasirinkto gerimo."
-
+/**/
     document.getElementsByClassName('order')[0].innerText = uzsakymas;
     console.log(uzsakymas);
 }
