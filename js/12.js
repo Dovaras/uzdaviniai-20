@@ -22,22 +22,19 @@ function buttonClick() {
         uzsakymas += "nori deserto, ";
     } else uzsakymas += "nenori deserto ir ";
 
-    // Radiobutton: kaip paimti iš visų pasirinkimų - vienintelę pažymėtą reikšmę?
-    // Nes Radiobutton tam ir yra skirtas - vieninteliam pasirinkimui...
-    const sultys = document.getElementById("sultys");
-    const gira = document.getElementById("gira");
-    const pienas = document.getElementById("pienas");
-/**/
-    if (sultys.checked == true) {
-        uzsakymas += "sultys yra pasirinktas gerimas.";
-    } else if (gira.checked == true) {
-        uzsakymas += "gira yra pasirinktas gerimas.";
-        } else if (pienas.checked == true) {
-            uzsakymas += "pienas yra pasirinktas gerimas.";
-            } else uzsakymas += "nera pasirinkto gerimo."
-/**/
+    // Radiobutton:
+    let pabaiga = false;
+    var radios = document.getElementsByTagName('input');
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].type === 'radio' && radios[i].checked) {
+            pabaiga = true;
+            uzsakymas += radios[i].value + " yra pasirinktas gerimas.";
+        }
+    }
+    if (!pabaiga) uzsakymas += " nera pasirinkto gerimo";
+
     document.getElementsByClassName('order')[0].innerText = uzsakymas;
-    console.log(uzsakymas);
+    document.getElementsByClassName('order')[1].innerText = "aha...";
 }
 buttonQuery.addEventListener('click', buttonClick);
 
