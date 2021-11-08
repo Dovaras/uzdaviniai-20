@@ -15,5 +15,3 @@ function textColorClick() {
 document.querySelector('button').addEventListener('click', buttonClick);
 document.getElementById("bg-color").addEventListener('click', bgColorClick);
 document.getElementById("text-color").addEventListener('click', textColorClick);
-
-//fdfvfsdvfdv
