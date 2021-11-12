@@ -3,23 +3,23 @@ let data_komandaQuery = document.querySelectorAll('[data-komanda]');
 var taskaiNamu = 0, taskaiSveciu = 0;
 
 function buttonClicked0() {
-    data_komandaQuery[0].innerText = ++taskaiNamu; console.log(taskaiNamu);
+    data_komandaQuery[0].innerText = ++taskaiNamu;
 }function buttonClicked1() {
     taskaiNamu += 2;
-    data_komandaQuery[0].innerText = taskaiNamu; console.log(taskaiNamu);
+    data_komandaQuery[0].innerText = taskaiNamu;
 }function buttonClicked2() {
     taskaiNamu += 3;
-    data_komandaQuery[0].innerText = taskaiNamu; console.log(taskaiNamu);
+    data_komandaQuery[0].innerText = taskaiNamu;
 }
 
 function buttonClicked3() {
-    data_komandaQuery[1].innerText = ++taskaiSveciu; console.log(taskaiSveciu);
+    data_komandaQuery[1].innerText = ++taskaiSveciu;
 }function buttonClicked4() {
     taskaiSveciu += 2;
-    data_komandaQuery[1].innerText = taskaiSveciu; console.log(taskaiSveciu);
+    data_komandaQuery[1].innerText = taskaiSveciu;
 }function buttonClicked5() {
     taskaiSveciu += 3;
-    data_komandaQuery[1].innerText = taskaiSveciu; console.log(taskaiSveciu);
+    data_komandaQuery[1].innerText = taskaiSveciu;
 }
 
 buttonQuery[0].addEventListener('click', buttonClicked0);
@@ -42,9 +42,6 @@ buttonQuery[5].addEventListener('click', buttonClicked5);
 
 // }
 // buttonQuery.addEventListener('click', buttonClicked);
-
-
-
 
 /*
 function showDetails(animal) {
